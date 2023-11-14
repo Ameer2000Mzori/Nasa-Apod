@@ -52,7 +52,6 @@
 - **[Scss and Css]**
 - **[Api Use]**
 - **[Linters Use]**
-- **[Eslint Use]**
 - **[Object Use]**
 - **[Web Pack Build]**
 
