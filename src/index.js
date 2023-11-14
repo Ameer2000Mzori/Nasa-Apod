@@ -1,5 +1,5 @@
 // selecting our elements
-const laodMoreBtn = document.getElementsByClassName("laod-more")[0];
+const loadMoreBtn = document.getElementsByClassName("load-more")[0];
 const headerWrapper = document.getElementsByClassName("header-Wrapper")[0];
 
 // getting Api
@@ -71,7 +71,7 @@ function loadMorePictures(firstTenPictures) {
 }
 
 //our events listners
-laodMoreBtn.addEventListener("click", getPictures);
+loadMoreBtn.addEventListener("click", getPictures);
 
 // our html tree :
 
