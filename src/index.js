@@ -26,7 +26,7 @@ async function getPictures() {
 // // our functions
 
 function loadMorePictures(firstTenPictures) {
-  // console.log(e.target.parentElement.parentElement.children[0]);
+  //creating for each for our newly created elements and giving them values
   firstTenPictures.forEach((el) => {
     const postWrapper = document.createElement("div");
     postWrapper.classList = "post-Wrapper";
@@ -57,23 +57,27 @@ function loadMorePictures(firstTenPictures) {
     const dateAthorP = document.createElement("p");
     dateAthorP.textContent = `On ${el.date} Athor ${el.copyright}`;
 
+    // appending our elements to html
     textWrapper.appendChild(postTitle);
     textWrapper.appendChild(addFavoBtn);
     textWrapper.appendChild(postPText);
-
     postDateBy.appendChild(dateAthorP);
-
     postWrapper.appendChild(postImg);
     postWrapper.appendChild(textWrapper);
     postWrapper.appendChild(postDateBy);
     headerWrapper.appendChild(postWrapper);
+
+    // our function within the loop
+    addFavoBtn.addEventListener("click", (e) => {
+      console.log("hallo world", e.target.parentElement);
+    });
   });
+
+  //our events listners
 }
 
 //our events listners
 loadMoreBtn.addEventListener("click", getPictures);
-
-// our html tree :
 
 /*
  <div class="post-Wrapper">

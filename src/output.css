@@ -20,6 +20,7 @@ body {
   border-radius: 0 0 15px 15px;
   border: 1px solid;
   border-top: 0;
+  padding: 5px;
 }
 
 .buttons-Wrapper .favo-btn,
@@ -29,7 +30,6 @@ body {
   border: 1px solid;
   width: 100px;
   height: 25px;
-  margin: 1rem;
   color: black;
   font-family: "Kdam Thmor Pro", sans-serif;
   font-weight: 500;
@@ -88,7 +88,11 @@ body {
 
 @media screen and (max-width: 768px) {
   .header-Wrapper .buttons-Wrapper {
-    width: 100%;
+    position: fixed;
+    left: 0;
+    width: 5000px;
+    height: 60px;
+    top: 0;
   }
 
   .header-Wrapper .post-Wrapper {
