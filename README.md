@@ -51,7 +51,8 @@
 - **[Local Storage Use]**
 - **[Scss and Css]**
 - **[Api Use]**
-- **[Linters Use]**
+- **[Linters For Html, css and Scss]**
+- **[Eslint For Js]**
 - **[Object Use]**
 - **[Web Pack Build]**
 
