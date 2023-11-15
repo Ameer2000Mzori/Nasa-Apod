@@ -88,6 +88,32 @@ body {
   padding: 15px;
 }
 
+.header-Wrapper .post-Wrapper .add-Faov-Btn {
+  background-color: rgb(253, 253, 253);
+  border-radius: 15px;
+  border: 1px solid;
+  width: 120px;
+  height: 25px;
+  color: black;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+.header-Wrapper .post-Wrapper .add-Faov-Btn:hover {
+  background-color: rgb(124, 121, 121);
+  color: white;
+  width: 122px;
+  height: 26px;
+}
+
+.header-Wrapper .post-Wrapper .add-Faov-Btn:active {
+  background-color: rgb(233, 228, 228);
+  color: rgb(51, 50, 50);
+  width: 120px;
+  height: 25px;
+}
+
 .header-Wrapper .post-Date-By {
   width: 95%;
   text-align: start;

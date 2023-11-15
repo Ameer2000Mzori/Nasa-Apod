@@ -76,6 +76,7 @@ function loadMorePictures(firstTenPictures) {
     postImg.classList = "post-Img";
     postImg.alt = "img";
     postImg.title = "this image is from nasa api";
+
     postImg.src = `${el.url}`;
 
     const textWrapper = document.createElement("div");
@@ -96,7 +97,12 @@ function loadMorePictures(firstTenPictures) {
     postDateBy.classList = "post-Date-By";
 
     const dateAthorP = document.createElement("p");
-    dateAthorP.textContent = `On ${el.date} Athor ${el.copyright}`;
+    const dateP = document.createElement("p");
+    if (!el.copyright) {
+      el.copyright = "there is no Athor ";
+    }
+    dateAthorP.textContent = `  ${el.copyright}`;
+    dateP.textContent = ` ${el.date}`;
 
     // appending our elements to html
 
@@ -104,6 +110,7 @@ function loadMorePictures(firstTenPictures) {
     textWrapper.appendChild(addFavoBtn);
     textWrapper.appendChild(postPText);
     postDateBy.appendChild(dateAthorP);
+    postDateBy.appendChild(dateP);
     postWrapper.appendChild(postImg);
     postWrapper.appendChild(textWrapper);
     postWrapper.appendChild(postDateBy);
@@ -112,7 +119,37 @@ function loadMorePictures(firstTenPictures) {
     // our events listner within the loop
 
     addFavoBtn.addEventListener("click", (e) => {
-      console.log("hallo world", e.target.parentElement);
+      const favoSrc = e.target.parentElement.parentElement.children[0].src;
+      const favoTitle =
+        e.target.parentElement.parentElement.children[1].children[0]
+          .textContent;
+
+      const favoText =
+        e.target.parentElement.parentElement.children[1].textContent;
+
+      const favoAthor =
+        e.target.parentElement.parentElement.children[2].children[0]
+          .textContent;
+      const favoDate =
+        e.target.parentElement.parentElement.children[2].children[1]
+          .textContent;
+      if (!dataObj.some((item) => item.title === favoTitle)) {
+        const newObj = {
+          url: favoSrc,
+          title: favoTitle,
+          explanation: favoText,
+          date: favoDate,
+          copyright: favoAthor,
+        };
+        dataObj.push(newObj);
+        console.log(dataObj);
+        console.log(favoSrc, favoTitle, favoText, favoAthor, favoDate);
+        addFavoBtn.textContent = "ADDED";
+        addFavoBtn.style.backgroundColor = "green";
+      } else {
+        console.log("you already have this item in favo");
+        addFavoBtn.textContent = "  ADDED ALREADY !";
+      }
     });
   });
 }
@@ -157,7 +194,13 @@ function showFavorites(dataObj) {
     postDateBy.classList = "post-Date-By-favo-favo";
 
     const dateAthorP = document.createElement("p");
-    dateAthorP.textContent = `On ${el.date} Athor ${el.copyright}`;
+    const dateP = document.createElement("p");
+
+    if (!el.copyright) {
+      el.copyright = "there is no Athor ";
+    }
+    dateAthorP.textContent = `  ${el.copyright}`;
+    dateP.textContent = ` ${el.date}`;
 
     // appending our elements to html
 
@@ -165,6 +208,7 @@ function showFavorites(dataObj) {
     textWrapper.appendChild(addFavoBtn);
     textWrapper.appendChild(postPText);
     postDateBy.appendChild(dateAthorP);
+    postDateBy.appendChild(dateP);
     postWrapper.appendChild(postImg);
     postWrapper.appendChild(textWrapper);
     postWrapper.appendChild(postDateBy);
