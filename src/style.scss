@@ -49,6 +49,13 @@ body {
   }
 }
 
+.loading-Animation,
+.loading-Animation-Favo {
+  position: fixed;
+  left: 15%;
+  top: 25%;
+}
+
 .header-Wrapper {
   margin-top: 4rem;
   display: flex;
@@ -117,25 +124,43 @@ body {
   gap: 35px;
   padding: 5%;
 
-  @media screen and (max-width: 768px) {
-    .buttons-Wrapper {
-      position: fixed;
-      left: 0;
-      width: 5000px;
-      height: 60px;
-      top: 0;
+  .post-Wrapper-favo-favo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    border-radius: 15px;
+    align-items: center;
+    width: 50%;
+
+    .post-Img-favo-favo {
+      height: 100%;
+      width: 100%;
+      border-radius: 15px;
     }
 
-    .post-Wrapper {
+    .text-Wrapper-favo-favo {
+      padding: 15px;
+    }
+  }
+
+  .post-Date-By-favo-favo {
+    width: 95%;
+    text-align: start;
+  }
+
+  @media screen and (max-width: 768px) {
+    .post-Wrapper-favo-favo {
       width: 100%;
 
-      .text-Wrapper {
+      .text-Wrapper-favo-favo {
         padding: 15px;
         font-size: 11px;
       }
     }
 
-    .post-Date-By {
+    .post-Date-By-favo-favo {
       width: 90%;
       text-align: start;
       font-size: 11px;
