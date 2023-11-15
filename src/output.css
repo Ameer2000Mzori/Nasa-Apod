@@ -97,7 +97,7 @@ body {
   color: black;
   font-family: "Kdam Thmor Pro", sans-serif;
   font-weight: 500;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .header-Wrapper .post-Wrapper .add-Faov-Btn:hover {
@@ -172,6 +172,32 @@ body {
 
 .favo-Wrapper .post-Wrapper-favo-favo .text-Wrapper-favo-favo {
   padding: 15px;
+}
+
+.favo-Wrapper .remove-Faov-Btn-favo-favo {
+  background-color: rgb(238, 77, 77);
+  border-radius: 15px;
+  border: 1px solid;
+  width: 120px;
+  height: 25px;
+  color: rgb(255, 255, 255);
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.favo-Wrapper .remove-Faov-Btn-favo-favo:hover {
+  background-color: rgb(124, 121, 121);
+  color: white;
+  width: 122px;
+  height: 26px;
+}
+
+.favo-Wrapper .remove-Faov-Btn-favo-favo:active {
+  background-color: rgb(233, 228, 228);
+  color: rgb(51, 50, 50);
+  width: 120px;
+  height: 25px;
 }
 
 .favo-Wrapper .post-Date-By-favo-favo {

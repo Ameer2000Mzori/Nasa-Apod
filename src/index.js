@@ -10,10 +10,10 @@ const favoWrapper = document.getElementsByClassName("favo-Wrapper")[0];
 const favoBtn = document.getElementsByClassName("favo-btn")[0];
 favoWrapper.style.display = "none";
 // getting Api
-const picturesApi = `https://api.nasa.gov/planetary/apod?api_key=SDygpe49fq5aqEh9rfBN5kR1LJxxwSUpY4hWeEEh&count=10`;
-const storedData = localStorage.getItem("dataObj");
+var picturesApi = `https://api.nasa.gov/planetary/apod?api_key=SDygpe49fq5aqEh9rfBN5kR1LJxxwSUpY4hWeEEh&count=10`;
+var storedData = localStorage.getItem("dataObj");
 // our dataObj
-const dataObj = JSON.parse(storedData) || [];
+var dataObj = JSON.parse(storedData) || [];
 
 // load more button functions :
 
@@ -141,7 +141,7 @@ function loadMorePictures(firstTenPictures) {
         localStorage.setItem("dataObj", JSON.stringify(dataObj));
       } else {
         console.log("you already have this item in favo");
-        addFavoBtn.textContent = "  ADDED ALREADY !";
+        addFavoBtn.textContent = "ADDED ALREADY";
       }
     });
   });
@@ -175,9 +175,9 @@ function showFavorites(dataObj) {
     const postTitle = document.createElement("h1");
     postTitle.textContent = `${el.title}`;
 
-    const addFavoBtn = document.createElement("button");
-    addFavoBtn.classList = "add-Faov-Btn-favo-favo";
-    addFavoBtn.textContent = "Remove-Favo";
+    const removeFavoBtn = document.createElement("button");
+    removeFavoBtn.classList = "remove-Faov-Btn-favo-favo";
+    removeFavoBtn.textContent = "REMOVE";
 
     const postPText = document.createElement("p");
     postPText.classList = "post-P-Text-favo-favo";
@@ -198,7 +198,7 @@ function showFavorites(dataObj) {
     // appending our elements to html
 
     textWrapper.appendChild(postTitle);
-    textWrapper.appendChild(addFavoBtn);
+    textWrapper.appendChild(removeFavoBtn);
     textWrapper.appendChild(postPText);
     postDateBy.appendChild(dateAthorP);
     postDateBy.appendChild(dateP);
@@ -206,8 +206,29 @@ function showFavorites(dataObj) {
     postWrapper.appendChild(textWrapper);
     postWrapper.appendChild(postDateBy);
     favoWrapper.appendChild(postWrapper);
+
+    removeFavoBtn.addEventListener("click", (e) => {
+      const postElement =
+        e.target.parentElement?.parentElement?.children[1]?.children[0];
+
+      if (postElement) {
+        const postTitle = postElement.textContent;
+        console.log(postTitle);
+        removeFavoPost(postTitle);
+      } else {
+        console.error("Couldn't find post element");
+      }
+    });
   });
   loadingAnimationFavo.style.display = "none";
+}
+
+// removing our favo posts function
+function removeFavoPost(postTitle) {
+  dataObj = dataObj.filter((el) => el.title !== postTitle);
+  localStorage.setItem("dataObj", JSON.stringify(dataObj));
+  favoWrapper.innerHTML = "";
+  showFavorites(dataObj);
 }
 
 //our events listners
