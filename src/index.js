@@ -11,18 +11,9 @@ const favoBtn = document.getElementsByClassName("favo-btn")[0];
 favoWrapper.style.display = "none";
 // getting Api
 const picturesApi = `https://api.nasa.gov/planetary/apod?api_key=SDygpe49fq5aqEh9rfBN5kR1LJxxwSUpY4hWeEEh&count=10`;
-
+const storedData = localStorage.getItem("dataObj");
 // our dataObj
-const dataObj = [
-  {
-    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
-    title: "Test Test",
-    explanation:
-      "Betelgeuse (sounds a lot like ), a red supergiant star about 600 light years distant, is seen in this Hubble Space Telescope image - the first direct picture of the surface of a star other than the Sun. While Betelgeuse is cooler than the Sun, it is more massive and over 1000 times larger. If placed at the center of our Solar System, it would extend past the orbit of Jupiter. Betelgeuse is also known as Alpha Orionis, one of the brightest stars in the familiar constellation of Orion, the Hunter. The name Betelgeuse is Arabic in origin. As a massive red supergiant, it is nearing the end of its life and will soon become a supernova. In this historic image, a bright hotspot is revealed on the star's surface. ",
-    date: "2023-12-12",
-    copyright: "Ameer Ameen",
-  },
-];
+const dataObj = JSON.parse(storedData) || [];
 
 // load more button functions :
 
@@ -146,6 +137,8 @@ function loadMorePictures(firstTenPictures) {
         console.log(favoSrc, favoTitle, favoText, favoAthor, favoDate);
         addFavoBtn.textContent = "ADDED";
         addFavoBtn.style.backgroundColor = "green";
+
+        localStorage.setItem("dataObj", JSON.stringify(dataObj));
       } else {
         console.log("you already have this item in favo");
         addFavoBtn.textContent = "  ADDED ALREADY !";
