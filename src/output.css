@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+
 body {
   margin: 0;
   background-color: gray;
@@ -21,6 +22,7 @@ body {
   border-top: 0;
   padding: 5px;
 }
+
 .buttons-Wrapper .favo-btn,
 .buttons-Wrapper .load-more {
   background-color: rgb(253, 253, 253);
@@ -32,6 +34,7 @@ body {
   font-family: "Kdam Thmor Pro", sans-serif;
   font-weight: 500;
 }
+
 .buttons-Wrapper .favo-btn:hover,
 .buttons-Wrapper .load-more:hover {
   background-color: rgb(124, 121, 121);
@@ -39,6 +42,7 @@ body {
   width: 103px;
   height: 26px;
 }
+
 .buttons-Wrapper .favo-btn:active,
 .buttons-Wrapper .load-more:active {
   background-color: rgb(233, 228, 228);
@@ -52,6 +56,8 @@ body {
   position: fixed;
   left: 15%;
   top: 25%;
+  font-size: 25px;
+  background-color: rgb(207, 207, 165);
 }
 
 .header-Wrapper {
@@ -62,6 +68,7 @@ body {
   gap: 35px;
   padding: 5%;
 }
+
 .header-Wrapper .post-Wrapper {
   display: flex;
   flex-direction: column;
@@ -72,14 +79,17 @@ body {
   align-items: center;
   width: 50%;
 }
+
 .header-Wrapper .post-Wrapper .post-Img {
   height: 100%;
   width: 100%;
   border-radius: 15px;
 }
+
 .header-Wrapper .post-Wrapper .text-Wrapper {
   padding: 15px;
 }
+
 .header-Wrapper .post-Wrapper .add-Faov-Btn {
   background-color: rgb(253, 253, 253);
   border-radius: 15px;
@@ -91,22 +101,26 @@ body {
   font-weight: 500;
   font-size: 13px;
 }
+
 .header-Wrapper .post-Wrapper .add-Faov-Btn:hover {
   background-color: rgb(124, 121, 121);
   color: white;
   width: 122px;
   height: 26px;
 }
+
 .header-Wrapper .post-Wrapper .add-Faov-Btn:active {
   background-color: rgb(233, 228, 228);
   color: rgb(51, 50, 50);
   width: 120px;
   height: 25px;
 }
+
 .header-Wrapper .post-Date-By {
   width: 95%;
   text-align: start;
 }
+
 @media screen and (max-width: 768px) {
   .header-Wrapper .buttons-Wrapper {
     position: fixed;
@@ -115,13 +129,16 @@ body {
     height: 60px;
     top: 0;
   }
+
   .header-Wrapper .post-Wrapper {
     width: 100%;
   }
+
   .header-Wrapper .post-Wrapper .text-Wrapper {
     padding: 15px;
     font-size: 11px;
   }
+
   .header-Wrapper .post-Date-By {
     width: 90%;
     text-align: start;
@@ -137,6 +154,7 @@ body {
   gap: 35px;
   padding: 5%;
 }
+
 .favo-Wrapper .post-Wrapper-favo-favo {
   display: flex;
   flex-direction: column;
@@ -147,14 +165,17 @@ body {
   align-items: center;
   width: 50%;
 }
+
 .favo-Wrapper .post-Wrapper-favo-favo .post-Img-favo-favo {
   height: 100%;
   width: 100%;
   border-radius: 15px;
 }
+
 .favo-Wrapper .post-Wrapper-favo-favo .text-Wrapper-favo-favo {
   padding: 15px;
 }
+
 .favo-Wrapper .remove-Faov-Btn-favo-favo {
   background-color: rgb(238, 77, 77);
   border-radius: 15px;
@@ -166,35 +187,39 @@ body {
   font-weight: 500;
   font-size: 13px;
 }
+
 .favo-Wrapper .remove-Faov-Btn-favo-favo:hover {
   background-color: rgb(124, 121, 121);
   color: white;
   width: 122px;
   height: 26px;
 }
+
 .favo-Wrapper .remove-Faov-Btn-favo-favo:active {
   background-color: rgb(233, 228, 228);
   color: rgb(51, 50, 50);
   width: 120px;
   height: 25px;
 }
+
 .favo-Wrapper .post-Date-By-favo-favo {
   width: 95%;
   text-align: start;
 }
+
 @media screen and (max-width: 768px) {
   .favo-Wrapper .post-Wrapper-favo-favo {
     width: 100%;
   }
+
   .favo-Wrapper .post-Wrapper-favo-favo .text-Wrapper-favo-favo {
     padding: 15px;
     font-size: 11px;
   }
+
   .favo-Wrapper .post-Date-By-favo-favo {
     width: 90%;
     text-align: start;
     font-size: 11px;
   }
 }
-
-/*# sourceMappingURL=output.css.map */
