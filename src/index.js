@@ -1,3 +1,4 @@
+import "./output.css";
 // selecting our elements
 const loadMoreBtn = document.getElementsByClassName("load-more")[0];
 const headerWrapper = document.getElementsByClassName("header-Wrapper")[0];

@@ -28,8 +28,8 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        type: "assets/resource",
         generator: {
           filename: "assets/[name][ext]", // Output path for images
         },
