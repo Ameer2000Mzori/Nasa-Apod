@@ -9,25 +9,26 @@ const loadingAnimationFavo = document.getElementsByClassName(
 const favoWrapper = document.getElementsByClassName("favo-Wrapper")[0];
 const favoBtn = document.getElementsByClassName("favo-btn")[0];
 favoWrapper.style.display = "none";
-// getting Api
+
+// our api key
 var picturesApi = `https://api.nasa.gov/planetary/apod?api_key=SDygpe49fq5aqEh9rfBN5kR1LJxxwSUpY4hWeEEh&count=10`;
-var storedData = localStorage.getItem("dataObj");
+
 // our dataObj
+var storedData = localStorage.getItem("dataObj");
 var dataObj = JSON.parse(storedData) || [];
 
 // load more button functions :
 
 // fatch our api
-
 async function getPictures() {
   // hidden our favo elemetns
   favoBtn.style.display = "block";
   loadingAnimationFavo.style.display = "none";
   favoWrapper.style.display = "none";
   loadingAnimation.style.display = "block";
+
   favoWrapper.innerHTML = "";
   // showing our loadMore elements
-
   headerWrapper.style.display = "flex";
 
   // fechting data
@@ -43,18 +44,16 @@ async function getPictures() {
     console.log(firstTenPictures);
 
     // disable loading text on screen
-
     loadingAnimation.style.display = "none";
 
     //passing our data to the loadMore function
-
     loadMorePictures(firstTenPictures);
   } catch (error) {
     console.error("Error fetching data:", error);
   }
 }
 
-// our functions
+// our load more function
 
 function loadMorePictures(firstTenPictures) {
   //creating for each for our newly created elements and giving them values
@@ -124,6 +123,8 @@ function loadMorePictures(firstTenPictures) {
       const favoDate =
         e.target.parentElement.parentElement.children[2].children[1]
           .textContent;
+
+      // checking if data has same data as wanted to add favorites
       if (!dataObj.some((item) => item.title === favoTitle)) {
         const newObj = {
           url: favoSrc,
@@ -160,6 +161,7 @@ function showFavorites(dataObj) {
   favoWrapper.style.display = "flex";
 
   dataObj.forEach((el) => {
+    // creating and giving each element an value
     const postWrapper = document.createElement("div");
     postWrapper.classList = "post-Wrapper-favo-favo";
 
@@ -207,10 +209,12 @@ function showFavorites(dataObj) {
     postWrapper.appendChild(postDateBy);
     favoWrapper.appendChild(postWrapper);
 
+    // remove event listner
     removeFavoBtn.addEventListener("click", (e) => {
       const postElement =
-        e.target.parentElement?.parentElement?.children[1]?.children[0];
+        e.target.parentElement.parentElement.children[1].children[0];
 
+      // checking if we are getting data or not
       if (postElement) {
         const postTitle = postElement.textContent;
         console.log(postTitle);
